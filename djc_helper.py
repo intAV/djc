@@ -401,26 +401,12 @@ class Djc:
 
         ss = "豆子:{}".format(douzi_1) + "\n" + s1 + "\n" + s2 + "\n" + s3 + "\n" + s4 + "\n" + "签到天数:{} ".format(qiandao_num) + "\n" + s5 + "\n" + s6 + "\n" + "豆子:{}".format(douzi_3)
         # print(ss)
-        push_msg(ss)
+        # push_msg(ss)
 
 
 # 消息推送
 def push_msg(msg):
-    qq_headers = {
-        "User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090217)",
-    }
-    msg = str(msg).replace('&', 'and')
-    url = "http://vps2.xuwei.org:33325/send_msg?user_id=1639983233&message={}".format(msg)
-    # print(url)
-    try:
-        req = requests.get(url=url, headers=qq_headers, timeout=10).json()
-        if req.get('status') == "ok":
-            logger.info("--push msg success:{}".format(msg))
-        else:
-            logger.info("push error.\n" + req)
-    except Exception as e:
-        logger.info("!!! push msg error !!!")
-        logger.info(e)
+    pass
 
 
 if __name__ == "__main__":
